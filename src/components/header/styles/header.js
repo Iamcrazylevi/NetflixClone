@@ -6,7 +6,12 @@ export const Background = styled.div`
   @media (max-width: 1100px) {
       ${({ dontShowOnSmallViewPort }) => dontShowOnSmallViewPort && 'background: none;'}
   }
-  `;
+`;
+
+export const Group = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
 export const Feature = styled(Container)`
     padding: 150px 0 500px 0;
@@ -25,9 +30,9 @@ export const Text = styled.p`
     line-height: normal;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.45);
     margin: 0;
- `;
+`;
 
- export const Link = styled.p`
+export const Link = styled.p`
     color: white;
     text-decoration; none;
     margin-right: 30px;
@@ -41,9 +46,10 @@ export const Text = styled.p`
      &:last-of-type {
          margin-right: 0;
      }
-    }`;
+    }
+`;
 
- export const FeatureCallOut = styled.h2`
+export const FeatureCallOut = styled.h2`
     color: white;
     font-size: 50px;
     line-height: normal;
@@ -51,5 +57,39 @@ export const Text = styled.p`
     text-shadow: 2px 2px 4px rgba(0,0,0,0.45);
     margin: 0;
     margin-bottom: 20px;
- `;
+`;
 
+export const Picture = styled.Button`
+    background: url(${({ src }) => src});
+    background-size: contain;
+    border: 0;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+`;
+
+export const Dropdown = styled.div`
+    display: none;
+    background-color: black;
+    position: absolute;
+    padding: 10px;
+    width: 100px;
+    top: 32px;
+    right: 10px;
+`;
+
+export const Profile = styled.div`
+    display: flex;
+    align-items: center
+    margin-left: 20px;
+    position: relative;
+    
+    button {
+        cursor: pointer;
+    }
+
+    &:hover > ${Dropdown} {
+        display: flex;
+        flex-direction: column;
+    }
+`;
