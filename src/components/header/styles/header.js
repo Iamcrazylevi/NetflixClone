@@ -32,23 +32,6 @@ export const Text = styled.p`
     margin: 0;
 `;
 
-export const Link = styled.p`
-    color: white;
-    text-decoration; none;
-    margin-right: 30px;
-    font-weight: ${({ active}) => (active == 'true' ? '700': 'normal')};
-    cursor: pointer;
-    
-    &hover {
-        font-weight: bold;
-     }
-
-     &:last-of-type {
-         margin-right: 0;
-     }
-    }
-`;
-
 export const FeatureCallOut = styled.h2`
     color: white;
     font-size: 50px;
@@ -68,6 +51,23 @@ export const Picture = styled.Button`
     cursor: pointer;
 `;
 
+export const Link = styled.p`
+    color: white;
+    text-decoration; none;
+    margin-right: 30px;
+    font-weight: ${({ active}) => (active == 'true' ? '700': 'normal')};
+    cursor: pointer;
+    
+    &hover {
+        font-weight: bold;
+     }
+
+     &:last-of-type {
+         margin-right: 0;
+     }
+    }
+`;
+
 export const Dropdown = styled.div`
     display: none;
     background-color: black;
@@ -76,6 +76,32 @@ export const Dropdown = styled.div`
     width: 100px;
     top: 32px;
     right: 10px;
+
+    ${Group}:last-of-type ${Link} {
+    cursor: pointer;
+    }
+
+    ${Group} {
+        margin-bottom: 10px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        ${Link},${Picture} {
+            cursor: default;
+        }
+    }
+
+    button {
+        margin-right: 10px;
+    }
+
+    p {
+        font-size: 12px;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
 `;
 
 export const Profile = styled.div`

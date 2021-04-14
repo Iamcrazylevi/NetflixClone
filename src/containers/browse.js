@@ -39,6 +39,9 @@ export function BrowseContainer({ slides }) {
                         </Header.Dropdown>
                     </Header.Profile>
                 </Header.Group>
+                <Header.Group>
+                    <Header.TestLink OnClick={() => firebase.auth().signOut()}>Sign Out</Header.TestLink>
+                </Header.Group>
             </Header.Frame>
             <Header.Feature>
                 <Header.FeatureCallOut>Watch Joker Now</Header.FeatureCallOut>
