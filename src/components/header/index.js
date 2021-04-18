@@ -13,7 +13,10 @@ import {
     Picture, 
     Feature, 
     FeatureCallOut, 
-    Text, 
+    Text,
+    Search,
+    SearchIcon,
+    SearchInput, 
 } from './styles/header';
 
 
@@ -28,6 +31,24 @@ Header.FeatureCallOut = function HeaderFeatureCallOut ({ children, ...restProps}
 Header.Profile = function HeaderProfile({ children, ...restProps }) {
     return <Profile { ...restProps}>{children}</Profile>
 }
+
+Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...restProps }) {
+    const [searchActive, setSearchActive] = useState(false);
+
+    return (
+        <Search {...restProps}>
+            <SearchIcon onClick={() => setSearchActive(searchActive => !searchActive)}>
+                <img src="/images/icons/search.png" alt="Search" />
+            </SearchIcon>
+            <SearchInput
+                value={searchTerm}
+                onChange={({ target }) => setSearchTerm(target.value)}
+                placeholder="Search films and series"
+                active={searchActive}
+            />
+        </Search>
+    );
+};
 
 Header.Picture = function HeaderPicture({ src, ...restProps }) {
     return <Picture { ...restProps} src={'/images/users/${src}.png'} />;
