@@ -10,7 +10,8 @@ import {
     Group, 
     Profile, 
     Dropdown,
-    Picture, 
+    Picture,
+    PlayButton, 
     Feature, 
     FeatureCallOut, 
     Text,
@@ -52,20 +53,24 @@ Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...restProps 
 
 Header.Picture = function HeaderPicture({ src, ...restProps }) {
     return <Picture { ...restProps} src={'/images/users/${src}.png'} />;
-}
+};
 
 Header.Dropdown = function HeaderDropdown ({ children, ...restProps}) {
-    return <Dropdown {...restProps}>{children}</Dropdown>
-}
+    return <Dropdown {...restProps}>{children}</Dropdown>;
+};
 
 Header.Text = function HeaderText ({ children, ...restProps}) {
-    return <Text {...restProps}>{children}</Text>
-}
+    return <Text {...restProps}>{children}</Text>;
+};
 
 Header.TextLink = function HeaderTextLink ({ children, ...restProps}) {
-    return <Link {...restProps}>{children}</Link>
-}
+    return <Link {...restProps}>{children}</Link>;
+};
+
+Header.PlayButton = function HeaderPlayButton({ children, ...restProps }) {
+    return <PlayButton {...restProps}>{children}</PlayButton>;
+}; 
 
 Header.Group = function HeaderGroup ({ children, ...restProps}) {
-    return <Group {...restProps}>{children}</Group>
-}
+    return <Group {...restProps}>{children}</Group>;
+};
