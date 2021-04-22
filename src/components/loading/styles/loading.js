@@ -1,25 +1,25 @@
-import styled, { createGlobalStyle } from 'styled-components/macro';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const LockBody = createGlobalStyle`
-    body {
-        overflow: hidden;
-    }
-`
+  body {
+    overflow: hidden;
+  }
+`;
 
 export const ReleaseBody = createGlobalStyle`
-    body {
-        overlfow: visible;
-    }
+  body {
+    overflow: visible;
+  }
 `;
 
 export const Spinner = styled.div`
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 999;
 
-:after {
+  :after {
     content: '';
     position: absolute;
     top: 50%;
@@ -36,6 +36,7 @@ export const Spinner = styled.div`
     animation-iteration-count: infinite;
     animation-timing-function: linear;
   }
+
   @-ms-keyframes spin {
     from {
       -ms-transform: rotate(0deg);
@@ -44,6 +45,7 @@ export const Spinner = styled.div`
       -ms-transform: rotate(360deg);
     }
   }
+
   @-moz-keyframes spin {
     from {
       -moz-transform: rotate(0deg);
@@ -52,6 +54,7 @@ export const Spinner = styled.div`
       -moz-transform: rotate(360deg);
     }
   }
+
   @-webkit-keyframes spin {
     from {
       -webkit-transform: rotate(0deg);
@@ -60,6 +63,7 @@ export const Spinner = styled.div`
       -webkit-transform: rotate(360deg);
     }
   }
+
   @keyframes spin {
     from {
       transform: rotate(0deg);
